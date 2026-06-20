@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AINA - Digital Marketing Consultancy</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const { useState } = React;
+        const { Menu, X, ArrowRight, CheckCircle, Star, TrendingUp, Users, Zap } = lucide;
+
+        function MarketingConsultancy() {
+            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+            return React.createElement('div', { className: 'min-h-screen bg-white' },
+                // Navigation
+                React.createElement('nav', { className: 'fixed w-full bg-white shadow-sm z-50' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto px-4 py-4 flex justify-between items-center' },
+                        React.createElement('div', { className: 'text-2xl font-bold text-black' }, 'AINA'),
+                        React.createElement('div', { className: 'hidden md:flex gap-8' },
+                            React.createElement('a', { href: '#services', className: 'text-gray-700 hover:text-amber-600' }, 'Services'),
+                            React.createElement('a', { href: '#work', className: 'text-gray-700 hover:text-amber-600' }, 'Our Work'),
+                            React.createElement('a', { href: '#about', className: 'text-gray-700 hover:text-amber-600' }, 'About'),
+                            React.createElement('a', { href: '#contact', className: 'bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-900' }, 'Get Started')
+                        ),
+                        React.createElement('button', { 
+                            className: 'md:hidden',
+                            onClick: () => setMobileMenuOpen(!mobileMenuOpen)
+                        }, mobileMenuOpen ? React.createElement(X, { size: 24 }) : React.createElement(Menu, { size: 24 }))
+                    ),
+                    mobileMenuOpen && React.createElement('div', { className: 'md:hidden bg-white border-t border-gray-200 p-4 space-y-3' },
+                        React.createElement('a', { href: '#services', className: 'block text-gray-700' }, 'Services'),
+                        React.createElement('a', { href: '#work', className: 'block text-gray-700' }, 'Our Work'),
+                        React.createElement('a', { href: '#about', className: 'block text-gray-700' }, 'About'),
+                        React.createElement('a', { href: '#contact', className: 'block bg-black text-white px-6 py-2 rounded-lg text-center' }, 'Get Started')
+                    )
+                ),
+
+                // Hero Section
+                React.createElement('section', { className: 'pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 to-black' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto text-center' },
+                        React.createElement('h1', { className: 'text-5xl md:text-6xl font-bold text-white mb-6' }, 'Transform Your Digital Presence'),
+                        React.createElement('p', { className: 'text-xl text-gray-300 mb-8 max-w-2xl mx-auto' }, 'Strategic digital marketing that drives real growth. We help brands connect with their audience and scale faster.'),
+                        React.createElement('div', { className: 'flex gap-4 justify-center flex-wrap' },
+                            React.createElement('button', { className: 'bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 flex items-center gap-2' },
+                                'Schedule Consultation ',
+                                React.createElement(ArrowRight, { size: 20 })
+                            ),
+                            React.createElement('button', { className: 'border-2 border-amber-600 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50' }, 'View Our Work')
+                        )
+                    )
+                ),
+
+                // Stats
+                React.createElement('section', { className: 'py-16 px-4 bg-white' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-center' },
+                        React.createElement('div', {},
+                            React.createElement('div', { className: 'text-4xl font-bold text-amber-600 mb-2' }, '150+'),
+                            React.createElement('p', { className: 'text-gray-600' }, 'Successful Campaigns')
+                        ),
+                        React.createElement('div', {},
+                            React.createElement('div', { className: 'text-4xl font-bold text-amber-600 mb-2' }, '85%'),
+                            React.createElement('p', { className: 'text-gray-600' }, 'Average ROI Growth')
+                        ),
+                        React.createElement('div', {},
+                            React.createElement('div', { className: 'text-4xl font-bold text-amber-600 mb-2' }, '50+'),
+                            React.createElement('p', { className: 'text-gray-600' }, 'Happy Clients')
+                        ),
+                        React.createElement('div', {},
+                            React.createElement('div', { className: 'text-4xl font-bold text-amber-600 mb-2' }, '8 yrs'),
+                            React.createElement('p', { className: 'text-gray-600' }, 'Industry Experience')
+                        )
+                    )
+                ),
+
+                // Services
+                React.createElement('section', { id: 'services', className: 'py-20 px-4 bg-gray-50' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto' },
+                        React.createElement('div', { className: 'text-center mb-16' },
+                            React.createElement('h2', { className: 'text-4xl font-bold text-gray-900 mb-4' }, 'Our Services'),
+                            React.createElement('p', { className: 'text-xl text-gray-600' }, 'Comprehensive digital solutions tailored to your business')
+                        ),
+                        React.createElement('div', { className: 'grid md:grid-cols-3 gap-8' },
+                            [
+                                { icon: TrendingUp, title: 'SEO & Content Strategy', desc: 'Boost your organic visibility with data-driven SEO and content that ranks and converts.' },
+                                { icon: Users, title: 'Social Media Marketing', desc: 'Build engaged communities and drive sales through strategic social media campaigns.' },
+                                { icon: Zap, title: 'PPC Advertising', desc: 'Maximize your ad spend with targeted campaigns that deliver measurable results fast.' },
+                                { icon: TrendingUp, title: 'Email Marketing', desc: 'Convert leads into loyal customers with personalized email campaigns that perform.' },
+                                { icon: Users, title: 'Brand Strategy', desc: 'Define your unique market position and create a compelling brand narrative.' },
+                                { icon: Zap, title: 'Analytics & Reporting', desc: 'Track what matters with custom dashboards and transparent, actionable insights.' }
+                            ].map((service, idx) =>
+                                React.createElement('div', { key: idx, className: 'bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition' },
+                                    React.createElement(service.icon, { size: 40, className: 'text-amber-600 mb-4' }),
+                                    React.createElement('h3', { className: 'text-xl font-bold text-gray-900 mb-3' }, service.title),
+                                    React.createElement('p', { className: 'text-gray-600' }, service.desc)
+                                )
+                            )
+                        )
+                    )
+                ),
+
+                // Case Studies
+                React.createElement('section', { id: 'work', className: 'py-20 px-4 bg-white' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto' },
+                        React.createElement('div', { className: 'text-center mb-16' },
+                            React.createElement('h2', { className: 'text-4xl font-bold text-gray-900 mb-4' }, 'Recent Success Stories'),
+                            React.createElement('p', { className: 'text-xl text-gray-600' }, 'Real results from real clients')
+                        ),
+                        React.createElement('div', { className: 'grid md:grid-cols-2 gap-8' },
+                            [
+                                { company: 'TechStartup Co.', challenge: 'Low brand awareness in competitive market', result: '300% increase in qualified leads in 6 months', metric: '+300%' },
+                                { company: 'E-Commerce Brand', challenge: 'High customer acquisition cost', result: 'Reduced CAC by 45% while maintaining same volume', metric: '-45% CAC' },
+                                { company: 'B2B Services', challenge: 'Struggling to rank for key services', result: 'Page 1 rankings for 15+ high-intent keywords', metric: '#1 Rankings' },
+                                { company: 'SaaS Platform', challenge: 'Email list not generating revenue', result: 'Built $2.3M pipeline through email alone', metric: '$2.3M' }
+                            ].map((study, idx) =>
+                                React.createElement('div', { key: idx, className: 'bg-amber-50 p-8 rounded-xl border border-amber-200' },
+                                    React.createElement('p', { className: 'text-sm text-amber-600 font-semibold mb-2' }, 'Case Study'),
+                                    React.createElement('h3', { className: 'text-2xl font-bold text-gray-900 mb-3' }, study.metric),
+                                    React.createElement('p', { className: 'text-gray-600 mb-4' }, study.company),
+                                    React.createElement('p', { className: 'text-gray-700 font-semibold mb-2' }, study.challenge),
+                                    React.createElement('p', { className: 'text-gray-700' }, study.result)
+                                )
+                            )
+                        )
+                    )
+                ),
+
+                // Testimonials
+                React.createElement('section', { className: 'py-20 px-4 bg-gray-50' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto' },
+                        React.createElement('div', { className: 'text-center mb-16' },
+                            React.createElement('h2', { className: 'text-4xl font-bold text-gray-900 mb-4' }, 'What Clients Say')
+                        ),
+                        React.createElement('div', { className: 'grid md:grid-cols-3 gap-8' },
+                            [
+                                { name: 'Sarah Johnson', title: 'Founder, TechVentures', text: 'GrowthLab completely transformed our marketing approach. Their strategic thinking and execution resulted in 5x growth in a year.' },
+                                { name: 'Mark Chen', title: 'CMO, Digital Solutions', text: 'Professional, data-driven, and results-oriented. They understand our business goals and deliver beyond expectations.' },
+                                { name: 'Emma Rodriguez', title: 'CEO, Commerce Plus', text: 'The team is responsive, creative, and most importantly—they deliver measurable ROI. Highly recommended.' }
+                            ].map((testimonial, idx) =>
+                                React.createElement('div', { key: idx, className: 'bg-white p-8 rounded-xl shadow-sm' },
+                                    React.createElement('div', { className: 'flex gap-1 mb-4' },
+                                        [...Array(5)].map((_, i) => React.createElement(Star, { key: i, size: 16, fill: 'gold', className: 'text-yellow-400' }))
+                                    ),
+                                    React.createElement('p', { className: 'text-gray-700 mb-4 italic' }, `"${testimonial.text}"`),
+                                    React.createElement('p', { className: 'font-bold text-gray-900' }, testimonial.name),
+                                    React.createElement('p', { className: 'text-sm text-gray-600' }, testimonial.title)
+                                )
+                            )
+                        )
+                    )
+                ),
+
+                // Why Us
+                React.createElement('section', { id: 'about', className: 'py-20 px-4 bg-white' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto' },
+                        React.createElement('div', { className: 'grid md:grid-cols-2 gap-12 items-center' },
+                            React.createElement('div', {},
+                                React.createElement('h2', { className: 'text-4xl font-bold text-gray-900 mb-6' }, 'Why Choose AINA'),
+                                React.createElement('div', { className: 'space-y-4' },
+                                    [
+                                        'Proven track record with 150+ successful campaigns',
+                                        'Transparent reporting and regular strategy sessions',
+                                        'Data-driven approach with focus on ROI',
+                                        'Dedicated account team, not just automated service',
+                                        'Custom strategies for your unique business',
+                                        'Honest advice—we say no when something won\'t work'
+                                    ].map((point, idx) =>
+                                        React.createElement('div', { key: idx, className: 'flex gap-3' },
+                                            React.createElement(CheckCircle, { size: 24, className: 'text-amber-600 flex-shrink-0 mt-1' }),
+                                            React.createElement('p', { className: 'text-gray-700' }, point)
+                                        )
+                                    )
+                                )
+                            ),
+                            React.createElement('div', { className: 'bg-blue-100 rounded-xl p-12 h-96 flex items-center justify-center text-gray-500' }, '[Your image here]')
+                        )
+                    )
+                ),
+
+                // CTA
+                React.createElement('section', { id: 'contact', className: 'py-20 px-4 bg-black' },
+                    React.createElement('div', { className: 'max-w-4xl mx-auto text-center' },
+                        React.createElement('h2', { className: 'text-4xl font-bold text-white mb-6' }, 'Ready to Grow Your Business?'),
+                        React.createElement('p', { className: 'text-xl text-gray-300 mb-8' }, 'Let\'s discuss how we can help you achieve your goals'),
+                        React.createElement('button', { className: 'bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-700' }, 'Schedule Your Free Consultation')
+                    )
+                ),
+
+                // Footer
+                React.createElement('footer', { className: 'bg-gray-900 text-gray-400 py-12 px-4' },
+                    React.createElement('div', { className: 'max-w-7xl mx-auto' },
+                        React.createElement('div', { className: 'grid md:grid-cols-4 gap-8 mb-8' },
+                            React.createElement('div', {},
+                                React.createElement('p', { className: 'text-white font-bold mb-4' }, 'AINA'),
+                                React.createElement('p', { className: 'text-sm' }, 'Strategic digital marketing for ambitious brands')
+                            ),
+                            React.createElement('div', {},
+                                React.createElement('p', { className: 'text-white font-bold mb-4' }, 'Services'),
+                                React.createElement('ul', { className: 'text-sm space-y-2' },
+                                    React.createElement('li', {}, React.createElement('a', { href: '#services', className: 'hover:text-white' }, 'SEO & Content')),
+                                    React.createElement('li', {}, React.createElement('a', { href: '#services', className: 'hover:text-white' }, 'Social Media')),
+                                    React.createElement('li', {}, React.createElement('a', { href: '#services', className: 'hover:text-white' }, 'PPC Advertising'))
+                                )
+                            ),
+                            React.createElement('div', {},
+                                React.createElement('p', { className: 'text-white font-bold mb-4' }, 'Company'),
+                                React.createElement('ul', { className: 'text-sm space-y-2' },
+                                    React.createElement('li', {}, React.createElement('a', { href: '#about', className: 'hover:text-white' }, 'About Us')),
+                                    React.createElement('li', {}, React.createElement('a', { href: '#work', className: 'hover:text-white' }, 'Case Studies')),
+                                    React.createElement('li', {}, React.createElement('a', { href: '#contact', className: 'hover:text-white' }, 'Contact'))
+                                )
+                            ),
+                            React.createElement('div', {},
+                                React.createElement('p', { className: 'text-white font-bold mb-4' }, 'Contact'),
+                                React.createElement('p', { className: 'text-sm mb-2' }, 'hello@aina.com'),
+                                React.createElement('p', { className: 'text-sm' }, '+971 (50) XXX-XXXX')
+                            )
+                        ),
+                        React.createElement('div', { className: 'border-t border-gray-800 pt-8 text-center text-sm' },
+                            React.createElement('p', {}, '© 2024 AINA. All rights reserved.')
+                        )
+                    )
+                )
+            );
+        }
+
+        ReactDOM.render(React.createElement(MarketingConsultancy), document.getElementById('root'));
+    </script>
+</body>
+</html>
